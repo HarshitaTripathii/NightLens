@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NightLens</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+
+      body {
+        width: 250px;
+        margin: 0;
+        color: #f7f7f8;
+        background: #111216;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px;
+      }
+
+      h1 {
+        margin: 0 0 4px;
+        font-size: 17px;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0;
+        color: #9b9ca5;
+        font-size: 12px;
+      }
+
+      button {
+        position: relative;
+        flex: 0 0 auto;
+        width: 46px;
+        height: 26px;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: #3b3c43;
+        cursor: pointer;
+        transition: background 160ms ease;
+      }
+
+      button::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 2px 6px rgb(0 0 0 / 35%);
+        transition: transform 160ms ease;
+      }
+
+      button[aria-checked="true"] {
+        background: #7567ff;
+      }
+
+      button[aria-checked="true"]::after {
+        transform: translateX(20px);
+      }
+
+      button:focus-visible {
+        outline: 2px solid #aaa2ff;
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>NightLens</h1>
+        <p id="status">Protection is on</p>
+      </div>
+      <button
+        id="toggle"
+        type="button"
+        role="switch"
+        aria-label="Toggle flash protection"
+        aria-checked="true"
+      ></button>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
