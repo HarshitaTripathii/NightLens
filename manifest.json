@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "NightLens",
+  "version": "1.1.0",
+  "description": "Softens sudden bright flashes in YouTube videos.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://*.youtube.com/*",
+    "https://*.youtube-nocookie.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "NightLens",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/*",
+        "https://*.youtube-nocookie.com/*"
+      ],
+      "js": ["detector.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
