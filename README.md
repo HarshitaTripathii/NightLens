@@ -1,3 +1,4 @@
+# Off Cmapus Code :: CEAMGT
 # NightLens
 
 A minimal Chrome extension that softens sudden bright flashes in YouTube
